@@ -79,17 +79,38 @@ h1 {
 }
 .btn-container button {
   padding: 1rem 3rem;
+  text-transform: capitalize;
   border-radius: 0.8rem;
   border: 0.2rem solid #4B4B4B;
   background-color: #FFCDD2;
+  cursor: pointer;
 }
 .btn-container button:hover {
+  background-color: #e4405f;
+}
+.btn-container button.active {
+  background-color: #e4405f;
+}
+
+form {
+  text-align: center;
+}
+form button {
+  margin: 0 1rem;
+  text-transform: capitalize;
+  border-radius: 0.8rem;
+  border: 0.2rem solid #4B4B4B;
+  background-color: #FFCDD2;
+  cursor: pointer;
+}
+form button:hover {
   background-color: #e4405f;
 }
 
 .display-category {
   width: 80%;
   margin: 3rem auto;
+  padding: 3rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
@@ -97,6 +118,8 @@ h1 {
 .display-category .card {
   display: flex;
   flex-direction: column;
+  position: relative;
+  transition: 0.3s all ease-in-out;
 }
 .display-category .card h2 {
   padding: 1rem 0;
@@ -112,10 +135,34 @@ h1 {
 .display-category .card figure img {
   width: 100%;
 }
+.display-category .card .score {
+  display: none;
+}
+.display-category .card:hover::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-height: 40rem;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+}
+.display-category .card:hover .score {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  font-size: 3rem;
+  color: #fffff0;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1;
+}
 
 .popup {
   padding: 5rem;
-  background-color: #81D4FA;
+  background-color: #f09766;
   box-shadow: 0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.25);
   border-radius: 0.8rem;
   display: none;
@@ -133,7 +180,31 @@ h1 {
 }
 .popup .card__description {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup .card__description small {
+  padding: 2rem 0;
+  display: block;
+}
+.popup .card__description .info-supp {
+  margin-top: 15%;
+}
+.popup .card__description .info-supp > div {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.popup .card__description .info-supp > div > span {
+  display: inline-block;
 }
 .popup.active {
   display: block;
+}
+.popup .close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.min.css.map */

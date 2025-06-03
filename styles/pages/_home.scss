@@ -18,9 +18,30 @@ h1 {
 
     button {
         padding: 1rem 3rem;
+        text-transform: capitalize;
         border-radius: .8rem;
         border: .2rem solid $grey-dark;
         background-color: $pink-light;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $pink-medium;
+        }
+        &.active {
+            background-color: $pink-medium;
+        }
+    }
+}
+form {
+    text-align: center;
+
+    button {
+        margin: 0 1rem;
+        text-transform: capitalize;
+        border-radius: .8rem;
+        border: .2rem solid $grey-dark;
+        background-color: $pink-light;
+        cursor: pointer;
 
         &:hover {
             background-color: $pink-medium;
@@ -30,6 +51,7 @@ h1 {
 .display-category {
     width: 80%;
     margin: 3rem auto;
+    padding: 3rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
@@ -38,6 +60,8 @@ h1 {
     .card {
         display: flex;
         flex-direction: column;
+        position: relative;
+        transition: .3s all ease-in-out;
 
         h2 {
             padding: 1rem 0;
@@ -54,13 +78,41 @@ h1 {
                 width: 100%;
             }
         }
+        .score {
+            display: none;
+        }
+
+        &:hover {
+            
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                max-height: 40rem;
+                height: 100%;
+                background-color: rgba(0,0,0,.7);
+                position: absolute;
+                bottom: 0;
+            }
+            & .score {
+                display: block;
+                width: fit-content;
+                height: fit-content;
+                font-size: 3rem;
+                color: $white-medium;
+                position: absolute;
+                bottom: 2rem;
+                right: 2rem;
+                z-index: 1;
+            }
+        }
 
     }
     
 }
 .popup {
     padding: 5rem;
-    background-color: $blue-light;
+    background-color: $orange-light;
     box-shadow: 0 0 .5rem .3rem rgba(0,0,0,0.25);
     border-radius: .8rem;
     display: none;
@@ -75,9 +127,36 @@ h1 {
         }
         &__description {
             width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            small {
+                padding: 2rem 0;
+                display: block;
+            }
+            .info-supp {
+                margin-top: 15%;
+
+                > div {
+                    width: 70%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    > span {
+                        display: inline-block;
+                    }
+                }
+            }
         }
     }
     &.active {
         display: block;
+    }
+    .close-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
     }
 }

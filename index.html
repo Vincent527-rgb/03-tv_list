@@ -20,22 +20,20 @@
 <body>
   <h1>Ze movie choice</h1>
   <div class="btn-container">
-    <button data-category="airing_today">Airing today</button>
+    <button data-category="airing_today" class="active">Airing today</button>
     <button data-category="on_the_air">On the air</button>
     <button data-category="popular">Popular</button>
     <button data-category="top_rated">Top rated</button>
   </div>
 
+  <form action="#">
+    <button class="previous">Précédent</button>
+    <span class="numero-page">1/15</span>
+    <button class="next">Suivant</button>
+  </form>
+
   <div class="display-category"></div>
 
-  <div class="popup">
-    <div class="card">
-      <figure class="card__poster"><img src="" alt=""> Image</figure>
-      <div class="card__description">
-        <h2>Titre du film</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio nostrum molestiae porro maiores necessitatibus esse ipsum nemo eum. Neque sunt modi obcaecati iure exercitationem velit laboriosam id reiciendis ad qui?</p>
-      </div>
-    </div>
-  </div>
+  <div class="popup"></div>
 </body>
 </html>
