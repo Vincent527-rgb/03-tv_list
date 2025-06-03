@@ -1,1 +1,83 @@
 @use "../abstracts/" as *;
+
+body {
+    font-family: "Comfortaa";
+    position: relative;
+    background-color: #b1d2db;
+}
+
+h1 {
+    padding: 3rem 0;
+    text-align: center;
+    color: $white-medium;
+    background-color: #3b8ea5;
+}
+.btn-container {
+    margin: 3rem 0;
+    text-align: center;
+
+    button {
+        padding: 1rem 3rem;
+        border-radius: .8rem;
+        border: .2rem solid $grey-dark;
+        background-color: $pink-light;
+
+        &:hover {
+            background-color: $pink-medium;
+        }
+    }
+}
+.display-category {
+    width: 80%;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            padding: 1rem 0;
+            font-size: 1.8rem;
+            text-align: center;
+            color: $main-dark;
+            flex-grow: 1;
+        }
+        figure {
+            max-height: 40rem;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+    
+}
+.popup {
+    padding: 5rem;
+    background-color: $blue-light;
+    box-shadow: 0 0 .5rem .3rem rgba(0,0,0,0.25);
+    border-radius: .8rem;
+    display: none;
+    position: fixed;
+    top: 5rem; bottom: 5rem; left: 5rem; right: 5rem;
+
+    .card {
+        display: flex;
+
+        &__poster {
+            width: 50%;
+        }
+        &__description {
+            width: 50%;
+        }
+    }
+    &.active {
+        display: block;
+    }
+}

@@ -17,6 +17,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -57,4 +58,82 @@ h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+body {
+  font-family: "Comfortaa";
+  position: relative;
+  background-color: #b1d2db;
+}
+
+h1 {
+  padding: 3rem 0;
+  text-align: center;
+  color: #fffff0;
+  background-color: #3b8ea5;
+}
+
+.btn-container {
+  margin: 3rem 0;
+  text-align: center;
+}
+.btn-container button {
+  padding: 1rem 3rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid #4B4B4B;
+  background-color: #FFCDD2;
+}
+.btn-container button:hover {
+  background-color: #e4405f;
+}
+
+.display-category {
+  width: 80%;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.display-category .card {
+  display: flex;
+  flex-direction: column;
+}
+.display-category .card h2 {
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #333;
+  flex-grow: 1;
+}
+.display-category .card figure {
+  max-height: 40rem;
+  overflow: hidden;
+}
+.display-category .card figure img {
+  width: 100%;
+}
+
+.popup {
+  padding: 5rem;
+  background-color: #81D4FA;
+  box-shadow: 0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  display: none;
+  position: fixed;
+  top: 5rem;
+  bottom: 5rem;
+  left: 5rem;
+  right: 5rem;
+}
+.popup .card {
+  display: flex;
+}
+.popup .card__poster {
+  width: 50%;
+}
+.popup .card__description {
+  width: 50%;
+}
+.popup.active {
+  display: block;
 }/*# sourceMappingURL=styles.min.css.map */
